@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_edit_profile"
+        android:icon="@drawable/ic_action_name"
+        android:title="Edit Profile"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:id="@+id/menu_logout"
+        android:icon="@drawable/ic_action_name"
+        android:title="Logout"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:id="@+id/menu_setting"
+        android:icon="@drawable/ic_action_name"
+        android:title="Setting"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:id="@+id/menu_gps"
+        android:icon="@drawable/ic_action_name"
+        android:title="Setting"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:id="@+id/menu_start_service"
+        android:icon="@drawable/ic_action_name"
+        android:title="SERVICE"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:id="@+id/menu_showCount"
+        android:icon="@drawable/ic_action_name"
+        android:title="SHOW COUNT"
+        app:showAsAction="ifRoom"
+        />
+</menu>
