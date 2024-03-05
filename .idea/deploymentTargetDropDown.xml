@@ -5,10 +5,10 @@
       <entry key="DemoFragmentActivity">
         <State />
       </entry>
-      <entry key="MainActivity">
+      <entry key="DemoMapActivity">
         <State />
       </entry>
-      <entry key="RegisterUserActivity">
+      <entry key="MapsActivity">
         <State />
       </entry>
       <entry key="UserProfileActivity">
