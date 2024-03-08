@@ -41,7 +41,7 @@ public class ProductListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_list);
-//        getProductList();
+        getProductList();
 //        getProductFromFile();
 
         Button navBtn = findViewById(R.id.bt_nav);
@@ -49,7 +49,7 @@ public class ProductListActivity extends AppCompatActivity {
 //        ProductListAdapter productListAdapter = new ProductListAdapter(productList, this);
 //        productListAdapter.notifyDataSetChanged();
         productListAdapter = new ProductListAdapter(productList, this);
-        convertProductEntity(productRepository.getALlProduct());
+//        convertProductEntity(productRepository.getALlProduct());
 
         RecyclerView recyclerView = findViewById(R.id.recycle_view_product_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -111,16 +111,16 @@ public class ProductListActivity extends AppCompatActivity {
 
         Toast.makeText(this, "Delete menu selected", Toast.LENGTH_SHORT).show();
     }
-    //    private void getProductList() {
-//        Random random = new Random(50);
-//        for (int i = 0; i < 100; i++) {
-//            Product product = new Product();
-//            product.setProductId("0" + i);
-//            product.setName("Product" + i);
-//            product.setPrice((random.nextFloat()));
-//            productList.add(product);
-//        }
-//    }
+        private void getProductList() {
+        Random random = new Random(50);
+        for (int i = 0; i < 100; i++) {
+            Product product = new Product();
+            product.setProductId("0" + i);
+            product.setName("Product" + i);
+            product.setPrice((random.nextFloat()));
+            productList.add(product);
+        }
+    }
 
 //    private void getProductList() {
 //

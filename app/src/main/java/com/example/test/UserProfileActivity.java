@@ -16,9 +16,11 @@ import android.app.AlertDialog;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -64,6 +66,28 @@ public class UserProfileActivity extends AppCompatActivity {
                 }
             });
 
+    private BroadcastReceiver myBroadcastReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String msg = intent.getStringExtra("MSG");
+            Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+        }
+    };
+
+    private String MY_ACTION = "MY_ACTION";
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(myBroadcastReceiver);
+    }
+
+    public void sendBroadcast() {
+        Intent intent = new Intent(MY_ACTION);
+        intent.putExtra("MSG", "Hello! This is a broadcast message");
+        sendBroadcast(intent);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,6 +96,8 @@ public class UserProfileActivity extends AppCompatActivity {
         tvFirstName = findViewById(R.id.first_name);
         tvLastName = findViewById(R.id.last_name);
         imgAvatar = findViewById(R.id.img_avatar);
+        IntentFilter intentFilter = new IntentFilter(MY_ACTION);
+        registerReceiver(myBroadcastReceiver, intentFilter, RECEIVER_EXPORTED);
         String url = "https://i1.sndcdn.com/artworks-XDRz5sfnFVEkTdIh-J8OhyQ-t500x500.jpg";
         Picasso.get().load(Uri.parse(url)).error(R.drawable.facebook)
                 .placeholder(R.drawable.facebook)
@@ -143,6 +169,9 @@ public class UserProfileActivity extends AppCompatActivity {
             return true;
         } else if (item.getItemId() == R.id.menu_showCount) {
             showCount();
+            return true;
+        } else if (item.getItemId() == R.id.menu_broadcast) {
+            sendBroadcast();
             return true;
         } else {
             return super.onOptionsItemSelected(item);
@@ -282,6 +311,7 @@ public class UserProfileActivity extends AppCompatActivity {
             }
         }
     }
+
 
 }
 

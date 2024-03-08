@@ -38,4 +38,10 @@
         android:title="SHOW COUNT"
         app:showAsAction="ifRoom"
         />
+    <item
+        android:id="@+id/menu_broadcast"
+        android:icon="@drawable/ic_action_name"
+        android:title="SHOW COUNT"
+        app:showAsAction="ifRoom"
+        />
 </menu>

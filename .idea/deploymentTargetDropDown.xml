@@ -2,13 +2,16 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="DemoFragmentActivity">
-        <State />
-      </entry>
       <entry key="DemoMapActivity">
         <State />
       </entry>
       <entry key="MapsActivity">
+        <State />
+      </entry>
+      <entry key="PostListActivity">
+        <State />
+      </entry>
+      <entry key="ProductListActivity">
         <State />
       </entry>
       <entry key="UserProfileActivity">
